@@ -109,11 +109,11 @@ defmodule CliSpinners do
 
       iex> CliSpinners.spin :dots
       iex> CliSpinners.spin :dots12
-      iex> ClisSpinner.spin(["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"])
+      iex> CliSpinners.spin(["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"])
       iex> CliSpinners.spin 5000
 
   """
-  def spin(theme) when is_atom(theme) do
+  def spin(theme) when is_atom(theme) or is_list(theme) do
     Spinner.render([frames: theme],fun())
   end
 
@@ -181,11 +181,8 @@ defmodule CliSpinners do
     end
   end
 
-  defp fun do
-    fn -> :time.sleep(3000) end
-  end
 
-  defp fun(time) do
+  defp fun(time \\3000) do
     fn -> :timer.sleep(time) end
   end
 end
