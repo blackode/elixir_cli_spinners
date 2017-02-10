@@ -2,88 +2,88 @@
 
 ![Spinners Gif](assets/images/spinners.gif)
 
-  # Documentation for CliSpinners.
-  CliSpinners are nothing more like a loading animation in the command line     
-  interface.                
+# Documentation for CliSpinners.
+CliSpinners are nothing more like a loading animation in the command line     
+interface.                
 
-  This module comes with different flavours of loadinl. The following is the        
-  list of flavours you can pass
-  
-  ## Loading Flavors        
+This module comes with different flavours of loadinl. The following is the        
+list of flavours you can pass
 
-  ### dots
-  The dots  flavor comes with **12** combnations of loading animations.      
-  From `dots` to `dots12`. There is no `dots1`. Here `dots1` is written      
-  as just `dots`
+## Loading Flavors        
 
-  ### line
-  Line comes with two combinations          
-  > line line2
+### dots
+The dots  flavor comes with **12** combnations of loading animations.      
+From `dots` to `dots12`. There is no `dots1`. Here `dots1` is written      
+as just `dots`
 
-  ### pipe
-  > pipe
+### line
+Line comes with two combinations          
+> line line2
 
-  ### simple_dots
-  > simple_dots  simple_dots_scrolling
+### pipe
+> pipe
 
-  ### star
-  > star  star2
+### simple_dots
+> simple_dots  simple_dots_scrolling
 
-  ### flip
-  > flip
-  ### hamburger
-  > hamburger
-  ### hamburger
-  > hamburger
-  ### grow
-  > grow
-  This grow format comes in two flavors           
-  > `grow_vertical` `grow_horizontal`
+### star
+> star  star2
 
-  ### balloon
-  > `balloon` `balloon2`
-  ### noise
-  > noise
-  ### bounce
-  > bounce
-  ### box_bounce
-  > `box_bounce` `box_bounce`
-  ### Geometry
-  > `triangle` `circle` `arc` `circle` `circle_quarters` `square_corners` `circle_halves`
-  ### squish
-  > squish
-  ### toggle
-  > toggle
-  This **toggle** flavor comes in 13 flavors          
+### flip
+> flip
+### hamburger
+> hamburger
+### hamburger
+> hamburger
+### grow
+> grow
+This grow format comes in two flavors           
+> `grow_vertical` `grow_horizontal`
 
-  > toggle toggle1 toggle2 ..... toggle13
-  ### arrow
-  This comes with 3 flavors
-  > arrow arrow2 arrow3
-  
-  ### bouncing
-  > bouncing_bar bouncing_ball
+### balloon
+> `balloon` `balloon2`
+### noise
+> noise
+### bounce
+> bounce
+### box_bounce
+> `box_bounce` `box_bounce`
+### Geometry
+> `triangle` `circle` `arc` `circle` `circle_quarters` `square_corners` `circle_halves`
+### squish
+> squish
+### toggle
+> toggle
+This **toggle** flavor comes in 13 flavors          
 
-  ### smiley
-  > smiley
-  ### mokey
-  > mokey
-  ### hearts
-  > hearts
-  ### clock
-  > clock
-  ### earth
-  > earth
-  ### moon
-  > moon
-  ### pong
-  > pong
-  ### runner
-  > runner
-  ### shark
-  > shark
-  ### dqpb
-  > dqpb
+> toggle toggle1 toggle2 ..... toggle13
+### arrow
+This comes with 3 flavors
+> arrow arrow2 arrow3
+
+### bouncing
+> bouncing_bar bouncing_ball
+
+### smiley
+> smiley
+### mokey
+> mokey
+### hearts
+> hearts
+### clock
+> clock
+### earth
+> earth
+### moon
+> moon
+### pong
+> pong
+### runner
+> runner
+### shark
+> shark
+### dqpb
+> dqpb
 
 
 Giff Credits [Sindresorhus](https://raw.githubusercontent.com/sindresorhus/cli-spinners/master/screenshot.gif) Npm Package 
