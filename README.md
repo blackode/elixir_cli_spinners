@@ -6,7 +6,7 @@
 CliSpinners are nothing more like a loading animation in the command line     
 interface.                
 
-This module comes with different flavours of loadinl. The following is the        
+This module comes with different flavours of loading spins. The following is the        
 list of flavours you can pass
 
 ## Loading Flavors        
@@ -58,7 +58,6 @@ This **toggle** flavor comes in 13 flavors
 
 > toggle toggle1 toggle2 ..... toggle13
 ### arrow
-This comes with 3 flavors
 > arrow arrow2 arrow3
 
 ### bouncing
@@ -66,8 +65,8 @@ This comes with 3 flavors
 
 ### smiley
 > smiley
-### mokey
-> mokey
+### monkey
+> monkey
 ### hearts
 > hearts
 ### clock
@@ -101,6 +100,4 @@ def deps do
 end
 ```
 
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/cli_spinners](https://hexdocs.pm/cli_spinners).
-
+and published on [HexDocs](https://hexdocs.pm).
