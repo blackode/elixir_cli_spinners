@@ -47,7 +47,7 @@ This grow format comes in two flavors
 ### bounce
 > bounce
 ### box_bounce
-> `box_bounce` `box_bounce`
+> `box_bounce` `box_bounce2`
 ### Geometry
 > `triangle` `circle` `arc` `circle` `circle_quarters` `square_corners` `circle_halves`
 ### squish
