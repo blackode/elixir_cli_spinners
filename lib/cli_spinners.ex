@@ -2,21 +2,21 @@ defmodule CliSpinners do
   alias CliSpinners.Spinner
   @moduledoc """
   Documentation for CliSpinners.
-  CliSpinners are nothing more like a loading animation in the command line     
-  interface.                
+  CliSpinners are nothing more like a loading animation in the command line
+  interface.
 
-  This module comes with different flavours of loadinl. The following is the        
+  This module comes with different flavours of loadinl. The following is the
   list of flavours you can pass
-  
-  # Loading Flavors        
+
+  # Loading Flavors
 
   ### dots
-  The dots  flavor comes with **12** combnations of loading animations.      
-  From `dots` to `dots12`. There is no `dots1`. Here `dots1` is written      
+  The dots  flavor comes with **12** combinations of loading animations.
+  From `dots` to `dots12`. There is no `dots1`. Here `dots1` is written
   as just `dots`
 
   ### line
-  Line comes with two combinations          
+  Line comes with two combinations
   > line line2
 
   ### pipe
@@ -36,7 +36,7 @@ defmodule CliSpinners do
   > hamburger
   ### grow
   > grow
-  This grow format comes in two flavors           
+  This grow format comes in two flavors
   > `grow_vertical` `grow_horizontal`
 
   ### balloon
@@ -53,13 +53,13 @@ defmodule CliSpinners do
   > squish
   ### toggle
   > toggle
-  This **toggle** flavor comes in 13 flavors          
+  This **toggle** flavor comes in 13 flavors
 
   > toggle toggle1 toggle2 ..... toggle13
   ### arrow
   This comes with 3 flavors
   > arrow arrow2 arrow3
-  
+
   ### bouncing
   > bouncing_bar bouncing_ball
 
@@ -87,9 +87,9 @@ defmodule CliSpinners do
   """
 
   @doc ~S"""
-  This is the default spinning function. It spins the default **line** spin.              
+  This is the default spinning function. It spins the default **line** spin.
   for three seconds.
-  After three secnods it stops spinning
+  After three seconds it stops spinning
 
   ##  Examples
        iex> CliSpinners.spin
@@ -99,10 +99,10 @@ defmodule CliSpinners do
   end
 
   @doc ~S"""
-  This definition will spin the given animation for three seconds. The option               
+  This definition will spin the given animation for three seconds. The option
   should be passed as either **atom** or **List** of frames but not both to be animated.
 
-  There is another option here if you pass the **time** in milliseconds then it will        
+  There is another option here if you pass the **time** in milliseconds then it will
   repeat the spinning of default animation up to the given interval of time
 
   ##  Examples
@@ -122,27 +122,27 @@ defmodule CliSpinners do
   end
 
   @doc ~S"""
-  This is used to render the given animation for given interval time. You need             
-  to pass two params. The first one is **atom** Name of the theme of the frames   
-  and second is time in milli seconds.
+  This is used to render the given animation for given interval time. You need
+  to pass two params. The first one is **atom** Name of the theme of the frames
+  and second is time in milliseconds.
   """
   def spin(theme,time) do
     CliSpinners.Spinner.render([frames: theme],fun(time))
   end
-  
+
   @doc ~S"""
   This definition is used to run the animation until the function execution is over.
-  How ever you can pass the **text** to be displayed while spinng the animation and end       
-  of the animation.          
+  However you can pass the **text** to be displayed while spinning the animation and end
+  of the animation.
 
-  The configuration is optional here. By default the text is `Loading...` while spinnig    
+  The configuration is optional here. By default the text is `Loading...` while spinning
   and `Loaded.`
 
-  The configuration is the list of key-value pair items.     
+  The configuration is the list of key-value pair items.
 
   ```elixir
 
-    frames: :line,         # This theme is set when no theme is set 
+    frames: :line,         # This theme is set when no theme is set
     spinner_color: [],     # The color code of the spinner
     text: "Loading…",      # The prefix text of the spinner
     done: "Loaded.",       # This text prints after ending the apinning
@@ -150,8 +150,8 @@ defmodule CliSpinners do
 
   ```
 
-  If you do no pass the cofiguration the above default configuration is used but      
-  you suppose to be passing the function parameter, which is not optional.
+  If you do not pass the cofiguration the above default configuration is used but
+  you are supposed to be passing the function parameter, which is not optional.
 
   ##   Examples
         iex> CliSpinners.spin_fun([text: "loading_text_here",done: "end_text_here"],fn -> :timer.slee(5000) end)
@@ -160,7 +160,7 @@ defmodule CliSpinners do
 
   def spin_fun(config \\ :default,function) do
     case config do
-      :default -> 
+      :default ->
         CliSpinners.Spinner.render ( function )
       conf when is_list(conf) ->
         CliSpinners.Spinner.render(config,function)
@@ -169,13 +169,13 @@ defmodule CliSpinners do
   end
 
   @doc ~S"""
-  This shows all the avilable spinning animatios for 2 seconds each  along its name.       
+  This shows all the available spinning animations for 2 seconds each alongside its name.
   It takes almost 2 min time for the demo .....require
-  How ever you can break that by pressing the `Ctrl + C` for two times.
+  However you can break that by pressing the `Ctrl + C` for two times.
   """
   def demo do
     functions = CliSpinners.Spinners.__info__(:functions)
-    for {fun_name,_} <- functions do 
+    for {fun_name,_} <- functions do
       IO.write Atom.to_string fun_name
       spin(fun_name,2000)
     end
