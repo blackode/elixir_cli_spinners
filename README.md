@@ -101,3 +101,9 @@ end
 ```
 
 and published on [HexDocs](https://hexdocs.pm).
+
+Thanks for Reading.
+
+### Support
+
+Buy me a cup of coffee https://paypal.me/ankanna
