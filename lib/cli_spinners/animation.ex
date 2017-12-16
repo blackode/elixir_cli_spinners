@@ -41,7 +41,7 @@ defmodule CliSpinners.Animation do
 
     # This timer is automatically cancelled when the server goes away.
     interval = config[:interval]
-    Process.send_after(self, :tick, interval)
+    Process.send_after(self(), :tick, interval)
 
     {config, count + 1}
   end
