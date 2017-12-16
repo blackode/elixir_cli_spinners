@@ -114,11 +114,13 @@ defmodule CliSpinners do
 
   """
   def spin(theme) when is_atom(theme) or is_list(theme) do
-    Spinner.render([frames: theme],fun())
+    Spinner.render([frames: theme], fun())
   end
 
   def spin(time) when is_integer(time) do
-    Spinner.render(fun(time))
+    time 
+    |> fun() 
+    |> Spinner.render()
   end
 
   @doc ~S"""
@@ -126,8 +128,8 @@ defmodule CliSpinners do
   to pass two params. The first one is **atom** Name of the theme of the frames
   and second is time in milliseconds.
   """
-  def spin(theme,time) do
-    CliSpinners.Spinner.render([frames: theme],fun(time))
+  def spin(theme, time) do
+    CliSpinners.Spinner.render([frames: theme], fun(time))
   end
 
   @doc ~S"""
@@ -158,12 +160,12 @@ defmodule CliSpinners do
 
   """
 
-  def spin_fun(config \\ :default,function) do
+  def spin_fun(config \\ :default, function) do
     case config do
       :default ->
-        CliSpinners.Spinner.render ( function )
+        CliSpinners.Spinner.render(function)
       conf when is_list(conf) ->
-        CliSpinners.Spinner.render(config,function)
+        CliSpinners.Spinner.render(config, function)
       _ -> IO.puts "Miss Matching the Configurations"
     end
   end
@@ -175,14 +177,14 @@ defmodule CliSpinners do
   """
   def demo do
     functions = CliSpinners.Spinners.__info__(:functions)
-    for {fun_name,_} <- functions do
-      IO.write Atom.to_string fun_name
-      spin(fun_name,2000)
+    for {fun_name, _} <- functions do
+      fun_name |> Atom.to_string() |> IO.write 
+      spin(fun_name, 2000)
     end
   end
 
 
-  defp fun(time \\3000) do
+  defp fun(time \\ 3000) do
     fn -> :timer.sleep(time) end
   end
 end

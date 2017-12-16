@@ -42,12 +42,11 @@ defmodule CliSpinners.Spinner do
       interval: format[:interval],
       render_frame: fn (count) -> render_frame(format, count) end,
       render_done:  fn -> render_done(format[:done]) end,
-
     ]
 
     CliSpinners.Animation.begin_animation(config)
     value = fun.()
-    CliSpinners.Animation.end_animation
+    CliSpinners.Animation.end_animation()
     value
   end
 
@@ -57,30 +56,27 @@ defmodule CliSpinners.Spinner do
     frame = Enum.at(frames, index)
 
     IO.write [
-      Utils.ansi_prefix,
+      Utils.ansi_prefix(),
       Utils.color(frame, format[:spinner_color]),
       " ",
       format[:text],
     ]
   end
 
-  defp render_done(:remove) do
-    IO.write Utils.ansi_prefix
-  end
+  defp render_done(:remove), do: IO.write(Utils.ansi_prefix())
   defp render_done(text) do
     IO.write [
       Utils.ansi_prefix,
       text,
       "\n",
-
     ]
   end
 
+  defp get_frames(list) when is_list(list), do: list
   defp get_frames(theme) when is_atom(theme) do
-    %{frames: frames,interval: interval} = apply(CliSpinners.Spinners,theme,[])
+    %{frames: frames, interval: _interval} = apply(CliSpinners.Spinners, theme, [])
     frames
   end
-  defp get_frames(list) when is_list(list), do: list
 
 end
 

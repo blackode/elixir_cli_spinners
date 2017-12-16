@@ -19,14 +19,14 @@ defmodule CliSpinners.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, github: "elixir-lang/ex_doc", override: true,only: :dev}
+      {:ex_doc, github: "elixir-lang/ex_doc", override: true, only: :dev}
     ]
   end
 
   defp description do
     """
-    This module compirises of the loading animations for the CLI- command line interface.   
-    This comprises of 60+ loading animaations.      
+    This module compirises of the loading animations for the CLI - command line interface.   
+    This comprises of 60+ loading animations.      
     This is highly useful ind command line applications for loading animations.
     """
   end
