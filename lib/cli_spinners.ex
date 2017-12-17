@@ -118,8 +118,8 @@ defmodule CliSpinners do
   end
 
   def spin(time) when is_integer(time) do
-    time 
-    |> fun() 
+    time
+    |> fun()
     |> Spinner.render()
   end
 
@@ -176,11 +176,8 @@ defmodule CliSpinners do
   However you can break that by pressing the `Ctrl + C` for two times.
   """
   def demo do
-    functions = CliSpinners.Spinners.__info__(:functions)
-    for {fun_name, _} <- functions do
-      fun_name |> Atom.to_string() |> IO.write 
-      spin(fun_name, 2000)
-    end
+    CliSpinners.Spinners.__info__(:functions)
+    |> Enum.each(fn {fun_name, _} -> spin(fun_name, 2000) end)
   end
 
 
