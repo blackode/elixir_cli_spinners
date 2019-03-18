@@ -13,7 +13,7 @@ def deps do
 end
 ```
 
-and published on [HexDocs](https://hexdocs.pm).
+and published on [HexDocs](https://hexdocs.pm/cli_spinners/CliSpinners.html).
 
 ## Demo
 To see all the demos in your terminal, just load the library in your `iex` shell and call a definition `demo`
