@@ -26,8 +26,8 @@ defmodule CliSpinners.Mixfile do
   defp description do
     """
     This module compirises of the loading animations for the CLI - command line interface.   
-    This comprises of 60+ loading animations.      
-    This is highly useful ind command line applications for loading animations.
+    This comprises 60+ loading animations.      
+    This is highly useful in command line applications for loading animations.
     """
   end
 
