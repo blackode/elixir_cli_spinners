@@ -156,7 +156,7 @@ defmodule CliSpinners do
   you are supposed to be passing the function parameter, which is not optional.
 
   ##   Examples
-        iex> CliSpinners.spin_fun([text: "loading_text_here",done: "end_text_here"],fn -> :timer.slee(5000) end)
+        iex> CliSpinners.spin_fun([text: "loading_text_here",done: "end_text_here"],fn -> :timer.sleep(5000) end)
 
   """
 
